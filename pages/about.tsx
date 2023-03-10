@@ -19,7 +19,7 @@ export default function About() {
               Welcome to Cyber Crafts, a digital service agency that specializes in creating stunning digital experiences for discerning individuals and businesses.
             </p> 
             <p>
-              At Cyber Crafts, we believe that digital design is the ultimate expression of luxury, elegance, and sophistication. That's why we work with the finest designers, developers, and digital experts to create bespoke solutions that are as unique as our clients.
+              At Cyber Crafts, we believe that digital design is the ultimate expression of luxury, elegance, and sophistication. That&apos;s why we work with the finest designers, developers, and digital experts to create bespoke solutions that are as unique as our clients.
             </p>
           </div>
           <div className='w-1/2'>
