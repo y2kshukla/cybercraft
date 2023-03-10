@@ -1,9 +1,9 @@
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren, ReactNode } from "react";
 import Footer from "./Footer";
 import Navbar from "./navbar";
 
 export interface props {
-    children: string;
+    children: ReactNode;
 }
 
 const AppShell = (props: PropsWithChildren<props>) => {
