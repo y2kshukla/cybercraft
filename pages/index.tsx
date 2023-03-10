@@ -24,7 +24,7 @@ export default function Home() {
             <Heading type='h2'>
               Crafting digital solutions for a connected world!!
             </Heading>
-            <p>A premier digital agency dedicated to helping businesses succeed in the ever-evolving digital landscape. In today's world, a strong online presence is essential to any business's success, and we specialize in creating customized digital solutions to help our clients achieve their goals.</p>
+            <p>A premier digital agency dedicated to helping businesses succeed in the ever-evolving digital landscape. In today&apos;s world, a strong online presence is essential to any business&apos;s success, and we specialize in creating customized digital solutions to help our clients achieve their goals.</p>
             <div>
               <Button link='/'>More details</Button>
             </div>
@@ -61,7 +61,7 @@ export default function Home() {
             <Heading><span className='text-main'>Why</span> chose <span className='text-main'>Us</span></Heading>
           </div>
           <div className='grid grid-cols-2 gap-8'>
-            <ChosingCards heading='Skilled Professionals'>At Cyber Crafts Agency, we understand the importance of staying ahead of the curve in the digital landscape. That's why we bring a team of highly skilled and experienced professionals to the table, ensuring that your project is in the best hands.</ChosingCards>
+            <ChosingCards heading='Skilled Professionals'>At Cyber Crafts Agency, we understand the importance of staying ahead of the curve in the digital landscape. That&apos;s why we bring a team of highly skilled and experienced professionals to the table, ensuring that your project is in the best hands.</ChosingCards>
             <ChosingCards heading='Latest Technology'>Our experts have a deep understanding of the latest industry trends and will work closely with you to create tailored solutions that meet your unique business needs and goals.</ChosingCards>
             <ChosingCards heading='Expertise and Experience'>From website design and development, to digital marketing, mobile app development, video production and more. We have the expertise and experience to help your business succeed in the digital world.</ChosingCards>
             <ChosingCards heading='Trusted'>Trust us to craft digital solutions that drive success and elevate your business to the next level.</ChosingCards>
