@@ -2,17 +2,18 @@ import { PropsWithChildren, ReactNode } from "react";
 
 interface heading {
     children: ReactNode;
+    className?: string;
     type?: string;
 }
 
-const Heading: React.FC<heading> = ({ children, type='h1' }) => {
+const Heading: React.FC<heading> = ({ children, type='h1', className='' }) => {
     if (type == 'h2') {
         return (
-            <h2 className="text-2xl font-semibold">{ children }</h2>
+            <h2 className={`text-2xl font-semibold ${className}`}>{ children }</h2>
         );
     }
     return (
-        <h1 className="text-5xl font-bold">{ children }</h1>
+        <h1 className={`text-5xl font-bold ${className}`}>{ children }</h1>
     );
 }
  

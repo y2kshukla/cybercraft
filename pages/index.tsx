@@ -36,14 +36,14 @@ export default function Home() {
         {/* about section */}
         <div className='flex flex-col gap-16'>
           <div className='flex gap-8 items-center'>
-            <img className='rounded-2xl w-1/2' src='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg'/>
+            <img className='rounded-2xl w-1/2' src={`./home/team.jpg`}/>
             <div className='flex flex-col gap-4'>
               <Heading><span className='text-main'>Our</span> Team</Heading>
               <p>Our team of experts is passionate about delivering cutting-edge technology and creative solutions to help our clients grow their online presence and achieve their business objectives. From website design and development to digital marketing and branding, we have the skills and expertise to provide our clients with a comprehensive suite of digital services.</p>
             </div>
           </div>
           <div className='flex flex-row-reverse gap-8 items-center'>
-            <img className='rounded-2xl w-1/2' src='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg'/>
+            <img className='rounded-2xl w-1/2' src={`./home/services.jpg`}/>
             <div className='flex flex-col gap-4'>
               <Heading><span className='text-main'>Our</span> Services</Heading>
               <Heading type='h2'>We offer the best services</Heading>

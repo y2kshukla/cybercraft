@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import Navbar from "./navbar";
 
 export interface props {
-    children: any;
+    children: ReactNode;
 }
 
 const AppShell = (props: PropsWithChildren<props>) => {

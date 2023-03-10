@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { PropsWithChildren, ReactNode } from "react";
 import { FiDribbble, FiInstagram, FiTwitter, FiYoutube } from "react-icons/fi";
+import logo from '../public/logo.png';
 import Input from "./input";
 
 const Footer = () => {
@@ -22,7 +24,9 @@ const Footer = () => {
     return (
         <div className="bg-background flex justify-between px-8 py-8">
             <div className="flex flex-col gap-8">
-                <div>Icon</div>
+                <div>
+                    <Image src={logo} alt='Logo'/>
+                </div>
                 <Text>© 2023 Cyber Crafts Agency. All rights reserved</Text>
                 <div className="flex gap-2">
                     <Icon>

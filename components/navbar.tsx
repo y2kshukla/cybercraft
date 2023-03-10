@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import logo from '../public/logo.png';
 import { ReactNode } from "react";
 import Button from "./button";
 
@@ -19,22 +21,22 @@ const Navbar = () => {
         {
             id: 2,
             children: 'About Us',
-            link: '/',
+            link: '/about',
         },
         {
             id: 3,
             children: 'Services',
-            link: '/',
+            link: '/services',
         },
         {
             id: 4,
             children: 'Our Work',
-            link: '/',
+            link: '/work',
         },
         {
             id: 5,
             children: 'Privacy Policy',
-            link: '/',
+            link: '/privacy',
         },
         {
             id: 6,
@@ -46,15 +48,17 @@ const Navbar = () => {
     ];
 
     return (
-        <div className="px-8 width-full bg-background flex justify-between">
-            <div>Icon</div>
+        <div className="px-8 py-2 width-full bg-background flex justify-between items-center">
+            <div>
+                <Image src={logo} alt='Some Text'/>
+            </div>
             <div className="flex">
-                <ul className="flex gap-4 py-4">
+                <ul className="flex gap-4 ">
                     {
                         navitems.map((items) => {
                             return (
                                 <li key={items.id}>
-                                    <Link className="text-secondary font-semibold" href={items.link}>{ items.children }</Link>
+                                    <Link className="text-white font-semibold" href={items.link}>{ items.children }</Link>
                                 </li>
                             );
                         })
