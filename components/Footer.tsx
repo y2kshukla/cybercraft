@@ -22,7 +22,7 @@ const Footer = () => {
     }
 
     return (
-        <div className="bg-background flex justify-between px-8 py-8">
+        <div className="bg-background flex justify-between px-8 py-8 max-sm:flex-col max-sm:gap-8">
             <div className="flex flex-col gap-8">
                 <div>
                     <Image src={logo} alt='Logo'/>
@@ -43,7 +43,7 @@ const Footer = () => {
                     </Icon>
                 </div>
             </div>
-            <div className="flex gap-16">
+            <div className="flex gap-16 max-sm:flex-wrap max-sm:justify-between max-sm:gap-8">
                 <div className="flex flex-col gap-4">
                     <Heading>Company</Heading>
                     <ul className="flex flex-col gap-2">

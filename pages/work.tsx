@@ -13,7 +13,7 @@ export default function Work() {
       </Head>
       <main className='text-background flex flex-col gap-16 mb-16 pt-16'>
         <Heading className="flex justify-center w-full gap-4">Our <span className='text-main'>Work</span></Heading>
-        <div className='grid grid-cols-2 gap-8'>
+        <div className='grid sm:grid-cols-2 gap-8'>
             <WorkCard Heading={<>App <span className='text-main'>Design</span></>} Img={`./work/app.svg`} Link='/'/>
             <WorkCard Heading={<>Pitch <span className='text-main'>Deck</span> Design</>} Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Link='/'/>
             <WorkCard Heading={<>Web <span className='text-main'>Applicaion</span></>} Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Link='/'/>

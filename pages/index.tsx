@@ -16,8 +16,8 @@ export default function Home() {
       </Head>
       <main className='text-background flex flex-col gap-16 mb-16'>
         {/* hero Section */}
-        <div className='flex gap-8 content-center	items-center py-24'>
-          <div className='w-1/2 flex flex-col gap-4'>
+        <div className='flex gap-8 sm:content-center	sm:items-center py-24 max-sm:flex-col-reverse max-sm:w-full'>
+          <div className='sm:w-1/2 flex flex-col gap-4'>
             <Heading>
               Cyber <span className='text-main'>Crafts</span> Agency
             </Heading>
@@ -29,21 +29,21 @@ export default function Home() {
               <Button link='/'>More details</Button>
             </div>
           </div>
-          <div className='w-1/2'>
+          <div className='sm:w-1/2'>
             <div className='bg-background h-40 w-full'></div>
           </div>
         </div>
         {/* about section */}
         <div className='flex flex-col gap-16'>
-          <div className='flex gap-8 items-center'>
-            <img className='rounded-2xl w-1/2' src={`./home/team.jpg`}/>
+          <div className='flex gap-8 items-center max-sm:flex-col'>
+            <img className='rounded-2xl sm:w-1/2' src={`./home/team.jpg`}/>
             <div className='flex flex-col gap-4'>
               <Heading><span className='text-main'>Our</span> Team</Heading>
               <p>Our team of experts is passionate about delivering cutting-edge technology and creative solutions to help our clients grow their online presence and achieve their business objectives. From website design and development to digital marketing and branding, we have the skills and expertise to provide our clients with a comprehensive suite of digital services.</p>
             </div>
           </div>
-          <div className='flex flex-row-reverse gap-8 items-center'>
-            <img className='rounded-2xl w-1/2' src={`./home/services.jpg`}/>
+          <div className='flex flex-row-reverse gap-8 items-center max-sm:flex-col'>
+            <img className='rounded-2xl sm:w-1/2' src={`./home/services.jpg`}/>
             <div className='flex flex-col gap-4'>
               <Heading><span className='text-main'>Our</span> Services</Heading>
               <Heading type='h2'>We offer the best services</Heading>
@@ -60,7 +60,7 @@ export default function Home() {
           <div className='flex justify-center'>
             <Heading><span className='text-main'>Why</span> chose <span className='text-main'>Us</span></Heading>
           </div>
-          <div className='grid grid-cols-2 gap-8'>
+          <div className='grid sm:grid-cols-2 gap-8'>
             <ChosingCards heading='Skilled Professionals'>At Cyber Crafts Agency, we understand the importance of staying ahead of the curve in the digital landscape. That&apos;s why we bring a team of highly skilled and experienced professionals to the table, ensuring that your project is in the best hands.</ChosingCards>
             <ChosingCards heading='Latest Technology'>Our experts have a deep understanding of the latest industry trends and will work closely with you to create tailored solutions that meet your unique business needs and goals.</ChosingCards>
             <ChosingCards heading='Expertise and Experience'>From website design and development, to digital marketing, mobile app development, video production and more. We have the expertise and experience to help your business succeed in the digital world.</ChosingCards>
@@ -72,7 +72,7 @@ export default function Home() {
           <div className='flex justify-center'>
             <Heading>Testimonials</Heading>
           </div>
-          <div className='grid grid-cols-2 gap-8'>
+          <div className='grid sm:grid-cols-2 gap-8'>
             <Testimonials text='I would highly recommend Cyber Crafts Agency to anyone looking for a top-notch digital agency that can help take their business to the next level.' writer='Mrs. Van Hartmann' role='Legacy Usability Manager'/>
             <Testimonials text='I was particularly impressed with their ability to deliver results within our budget and timeframe, without compromising on quality.' writer='Lana Bernier' role='Senior Paradigm Strategist'/>
             <Testimonials text={`I had the pleasure of working with Cyber Crafts Agency on a recent digital marketing campaign for my business, and I couldn't be happier with the results.`} writer='Mrs. Rose Clington' role='Usability Manager' />

@@ -99,7 +99,7 @@ export default function Privacy() {
                     <Heading className='border-main border-b-2' type='h2'>Date of Last Revision: 02/14/2023</Heading>
                     <p>Welcome to the Cyber crafts agency privacy policy (the Company, We or Us).Your privacy is important to us. This online privacy policy (Privacy Policy) explains how We collect, share, use, and protect information when you visit our website (Website) or use our online services (Services).As part of our commitment to privacy, We respect all rules and provisions stated in the new General Data Protection Rules (GDPR). This Privacy Policy should be read in conjunction with letter-Our Terms of Use (the Terms). All defined terms used in this Privacy Policy have the same meaning ascribed to them in the Terms, unless expressly otherwise provided for.We reserve the right to revise this Privacy Policy at any time. If We change the Privacy Policy, We’ll provide notice by posting the new Privacy Policy here and changing the date on the top.</p>
                 </div>
-                <div className='flex gap-8'>
+                <div className='flex gap-8 max-sm:flex-col-reverse'>
                     <div className='border-main border-2 rounded-xl p-4 flex flex-col gap-4'>
                         <Heading type='h2'>
                             Types of <span className='text-main'>personal</span> data we <span className='text-main'>collect</span>

@@ -1,58 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from '../public/logo.png';
-import { ReactNode } from "react";
-import Button from "./button";
+import { useState } from "react";
+import Hamburger from "hamburger-react";
+import useMediaQuery from "./hooks/useMediaQuery";
+import navitems from "./navItems";
+import { useSnapshot } from "valtio";
+import { MenuState } from "@/utils/state";
 
 const Navbar = () => {
-
-    type navItems  = {
-        id: number;
-        children: ReactNode;
-        link: string;
-    }
-
-    const navitems:navItems[] = [
-        {
-            id: 1,
-            children: 'Home',
-            link: '/',
-        },
-        {
-            id: 2,
-            children: 'About Us',
-            link: '/about',
-        },
-        {
-            id: 3,
-            children: 'Services',
-            link: '/services',
-        },
-        {
-            id: 4,
-            children: 'Our Work',
-            link: '/work',
-        },
-        {
-            id: 5,
-            children: 'Privacy Policy',
-            link: '/privacy',
-        },
-        {
-            id: 6,
-            children: (<Button link="/">
-                        Contact Us
-                    </Button>),
-            link: '/',
-        }
-    ];
+    const [isOpen, setIsOpen] = useState(false);
+    const snap = useSnapshot(MenuState);
+    console.log(snap);
+    const matches = useMediaQuery('(max-width: 640px)');
 
     return (
-        <div className="px-8 py-2 width-full bg-background flex justify-between items-center">
+        <div className="px-8 py-2 width-full bg-background flex justify-between items-center sticky top-0">
             <div>
                 <Image src={logo} alt='Some Text'/>
             </div>
-            <div className="flex">
+            {!matches ? (<div className="flex">
                 <ul className="flex gap-4 ">
                     {
                         navitems.map((items) => {
@@ -64,9 +31,12 @@ const Navbar = () => {
                         })
                     }
                 </ul>
-            </div>
+            </div>) :
+            (<div>
+                <Hamburger color="white" toggled={snap.isOpen} onToggle={toggled => MenuState.isOpen = toggled}/>
+            </div>)}
         </div>
     );
 }
- 
+
 export default Navbar;

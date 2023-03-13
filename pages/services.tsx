@@ -14,7 +14,7 @@ export default function Services() {
             </Head>
             <main className='text-background flex flex-col gap-16 mb-16 pt-16'>
                 <Heading className="flex justify-center w-full gap-4">Our <span className='text-main'>Services</span></Heading>
-                <div className='grid grid-cols-3 gap-8'>
+                <div className='grid sm:grid-cols-3 gap-8'>
                     <ServiceCard Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Heading='Website Development' text='Creating and developing custom websites to meet the specific needs of clients. This can include design and layout, content creation, and coding.'/>
                     <ServiceCard Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Heading='Search engine optimization (SEO)' text={`Helping clients improve their website's visibility on search engines by optimizing the website's content and structure.`}/>
                     <ServiceCard Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Heading='Pay-per-click advertising (PPC)' text={`Creating, managing, and optimizing campaigns on platforms to drive traffic to the client's website.`}/>
