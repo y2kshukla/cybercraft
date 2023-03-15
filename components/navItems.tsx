@@ -35,7 +35,7 @@ const navitems:navItems[] = [
     },
     {
         id: 6,
-        children: (<Button link="/">
+        children: (<Button link="/contact">
                     Contact Us
                 </Button>),
         link: '/',

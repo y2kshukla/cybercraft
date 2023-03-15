@@ -91,7 +91,7 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col gap-4">
                     <Heading>Newsletter</Heading>
-                    <Input/>
+                    <Input Button={ false }/>
                 </div>
             </div>
         </div>

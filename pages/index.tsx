@@ -3,6 +3,7 @@ import ChosingCards from '@/components/chosingCards';
 import Heading from '@/components/heading';
 import Testimonials from '@/components/testimonials';
 import Head from 'next/head';
+import Image from 'next/image';
 
 
 export default function Home() {
@@ -29,8 +30,8 @@ export default function Home() {
               <Button link='/'>More details</Button>
             </div>
           </div>
-          <div className='sm:w-1/2'>
-            <div className='bg-background h-40 w-full'></div>
+          <div className='sm:w-1/2 relative h-60'>
+            <Image src='./home/reshot-illustration-website-design-team-K5VSWPFRC7.svg' alt="Website Team" fill/>
           </div>
         </div>
         {/* about section */}

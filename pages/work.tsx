@@ -15,11 +15,11 @@ export default function Work() {
         <Heading className="flex justify-center w-full gap-4">Our <span className='text-main'>Work</span></Heading>
         <div className='grid sm:grid-cols-2 gap-8'>
             <WorkCard Heading={<>App <span className='text-main'>Design</span></>} Img={`./work/app.svg`} Link='/'/>
-            <WorkCard Heading={<>Pitch <span className='text-main'>Deck</span> Design</>} Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Link='/'/>
-            <WorkCard Heading={<>Web <span className='text-main'>Applicaion</span></>} Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Link='/'/>
-            <WorkCard Heading={<>Website <span className='text-main'>Design</span></>} Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Link='/'/>
-            <WorkCard Heading={<>Packaging <span className='text-main'>Design</span></>} Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Link='/'/>
-            <WorkCard Heading={<>Social <span className='text-main'>Media</span> Management</>} Img='https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg' Link='/'/>
+            <WorkCard Heading={<>Pitch <span className='text-main'>Deck</span> Design</>} Img='./work/pitch.svg' Link='/'/>
+            <WorkCard Heading={<>Web <span className='text-main'>Applicaion</span></>} Img='./work/webdev.svg' Link='/'/>
+            <WorkCard Heading={<>Website <span className='text-main'>Design</span></>} Img='./work/design.svg' Link='/'/>
+            <WorkCard Heading={<>Packaging <span className='text-main'>Design</span></>} Img='./work/packaging.svg' Link='/'/>
+            <WorkCard Heading={<>Social <span className='text-main'>Media</span> Management</>} Img='./work/social.svg' Link='/'/>
         </div>
       </main>
     </>

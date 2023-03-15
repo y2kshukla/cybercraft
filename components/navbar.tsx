@@ -15,7 +15,7 @@ const Navbar = () => {
     const matches = useMediaQuery('(max-width: 640px)');
 
     return (
-        <div className="px-8 py-2 width-full bg-background flex justify-between items-center sticky top-0">
+        <div className="px-8 py-2 width-full bg-background flex justify-between items-center sticky top-0 z-50">
             <div>
                 <Image src={logo} alt='Some Text'/>
             </div>

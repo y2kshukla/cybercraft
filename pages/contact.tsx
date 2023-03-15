@@ -1,6 +1,24 @@
+import Heading from '@/components/heading';
 import Head from 'next/head';
 
+
 export default function Contact() {
+    const Lable = ({ text } : { text: string }) => {
+        return (
+            <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-500">
+                { text }
+            </span>
+        );
+    }
+    const Input = ({ lable, placeholder, className }: {lable: string, placeholder?: string, className?: string}) => {
+        return (
+            <label className={ className }>
+                <Lable text={ lable }/>
+                <input className="w-full border-main border-2 rounded-sm focus:outline-none text-background px-2 py-1 placeholder:italic placeholder:text-slate-500" placeholder={ placeholder } type="text" name="input"/>
+            </label>
+        );
+    }
+    
     return (
         <>
             <Head>
@@ -9,8 +27,22 @@ export default function Contact() {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className='text-background flex flex-col gap-16 mb-16 pt-16'>
-                
+            <main className='text-background flex max-sm:flex-col max-sm:gap-8 justify-between mb-16 pt-16'>
+                <div>
+                    <Heading>Contact Us</Heading>
+                    <div>We are free for new Projects.</div>
+                </div>
+                <form className='flex flex-col gap-4'>
+                    <div className='flex gap-2'>
+                        <Input lable='First Name' placeholder='Enter First Name'/>
+                        <Input lable='Last Name' placeholder='Enter Last Name'/>
+                    </div>
+                    <Input lable='Your Email' placeholder='Enter Email Address' className='w-full'/>
+                    <label>
+                        <Lable text='Message:'/>
+                        <textarea className="w-full border-main border-2 rounded-sm focus:outline-none text-background px-2 py-1" rows={5}/>
+                    </label>
+                </form>
             </main>
         </>
     )

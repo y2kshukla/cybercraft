@@ -3,6 +3,7 @@ import { FiSend } from "react-icons/fi";
 
 export interface input {
     // children: string;
+    Button: boolean;
 }
 
 const Input = (props: PropsWithChildren<input>) => {
@@ -13,9 +14,9 @@ const Input = (props: PropsWithChildren<input>) => {
             </span>
             <div className="flex bg-white bg-opacity-10 rounded-md overflow-hidden">
                 <input className="bg-transparent focus:outline-none text-white px-2 py-1 placeholder:italic placeholder:text-white placeholder:text-opacity-10" placeholder="Your email address" type="text" name="input"/>
-                <button className="px-4 bg-main text-white">
+                {props.Button == true && <button className="px-4 bg-main text-white">
                     <FiSend/>
-                </button>
+                </button>}
             </div>
         </label>
     );
