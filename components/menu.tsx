@@ -4,7 +4,7 @@ import navitems from "./navItems";
 
 const Menu = () => {
     return (
-        <div className="fixed w-full h-full bg-background flex items-center justify-center">
+        <div className="fixed w-full h-full bg-background flex items-center justify-center z-40">
             <ul className="flex text-white flex-col gap-4 items-center w-full">
                 {navitems.map((item) => {
                     return (
@@ -17,5 +17,5 @@ const Menu = () => {
         </div>
     );
 }
- 
+
 export default Menu;
