@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import Button from '@/components/button';
 import ChosingCards from '@/components/chosingCards';
 import Heading from '@/components/heading';
@@ -7,6 +6,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from "framer-motion";
 import AliceCarousel from 'react-alice-carousel';
+import { Carousel } from '@mantine/carousel';
 
 
 export default function Home() {
@@ -103,8 +103,13 @@ export default function Home() {
           <div className='flex justify-center'>
             <Heading>Testimonials</Heading>
           </div>
-          <div className='flex items-center justify-center w-96'>
-            <AliceCarousel autoWidth autoHeight infinite mouseTracking items={items} autoPlay={ true } autoPlayInterval={ 5000 }/>
+          <div>
+            {/* <AliceCarousel autoWidth autoHeight infinite mouseTracking items={items} autoPlay={ true } autoPlayInterval={ 5000 }/> */}
+            <Carousel maw={320} mx="auto" withIndicators height={`auto`}>
+              {items.map((item, index) => {
+                return <Carousel.Slide key={index}>{ item }</Carousel.Slide>
+              })}
+            </Carousel>
           </div>
         </div>
       </main>
