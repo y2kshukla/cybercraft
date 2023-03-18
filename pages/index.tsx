@@ -85,7 +85,7 @@ export default function Home() {
             </div>
           </motion.div>
         </div>
-        {/* why chose us */}
+        {/* why chose us data */}
         <div className='flex flex-col gap-16'>
           <div className='flex justify-center'>
             <Heading><span className='text-main'>Why</span> chose <span className='text-main'>Us</span></Heading>
