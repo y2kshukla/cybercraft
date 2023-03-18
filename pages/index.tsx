@@ -27,10 +27,26 @@ export default function Home() {
   const handleDragStart = (e: any) => e.preventDefault();
 
   const items = [
-    <Testimonials text='I would highly recommend Cyber Crafts Agency to anyone looking for a top-notch digital agency that can help take their business to the next level.' writer='Mrs. Van Hartmann' role='Legacy Usability Manager'/>,
-    <Testimonials text='I was particularly impressed with their ability to deliver results within our budget and timeframe, without compromising on quality.' writer='Lana Bernier' role='Senior Paradigm Strategist'/>,
-    <Testimonials text={`I had the pleasure of working with Cyber Crafts Agency on a recent digital marketing campaign for my business, and I couldn't be happier with the results.`} writer='Mrs. Rose Clington' role='Usability Manager' />,
-    <Testimonials text='Their team of experts was incredibly professional, responsive, and knowledgeable, and they took the time to understand my unique needs and objectives' writer='John Doe' role='Senior Business Strategist'/>
+    {
+      text: 'I would highly recommend Cyber Crafts Agency to anyone looking for a top-notch digital agency that can help take their business to the next level.',
+      writer: 'Mrs. Van Hartmann',
+      role: 'Legacy Usability Manager',
+    },
+    {
+      text: 'I was particularly impressed with their ability to deliver results within our budget and timeframe, without compromising on quality.',
+      writer: 'Lana Bernier',
+      role: 'Senior Paradigm Strategist',
+    },
+    {
+      text: "I had the pleasure of working with Cyber Crafts Agency on a recent digital marketing campaign for my business, and I couldn't be happier with the results.",
+      writer: 'Mrs. Rose Clington',
+      role: 'Legacy Usability Manager',
+    },
+    {
+      text: 'Their team of experts was incredibly professional, responsive, and knowledgeable, and they took the time to understand my unique needs and objectives',
+      writer: 'John Doe',
+      role: 'Senior Business Strategist',
+    },
   ]
 
   return (
@@ -107,7 +123,9 @@ export default function Home() {
             {/* <AliceCarousel autoWidth autoHeight infinite mouseTracking items={items} autoPlay={ true } autoPlayInterval={ 5000 }/> */}
             <Carousel maw={320} mx="auto" withIndicators height={`auto`}>
               {items.map((item, index) => {
-                return <Carousel.Slide key={index}>{ item }</Carousel.Slide>
+                return (<Carousel.Slide key={index}>
+                  <Testimonials text={ item.text } writer={ item.writer } role={ item.role }/>
+                </Carousel.Slide>)
               })}
             </Carousel>
           </div>
