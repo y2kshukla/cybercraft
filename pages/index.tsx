@@ -1,3 +1,5 @@
+/* eslint-disable no-console */
+
 import Button from '@/components/button';
 import ChosingCards from '@/components/chosingCards';
 import Heading from '@/components/heading';
