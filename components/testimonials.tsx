@@ -9,7 +9,7 @@ interface testimonials {
 
 const Testimonials = (props: PropsWithChildren<testimonials>) => {
     return (
-        <div className="border-main border-2 p-4 flex flex-col gap-4">
+        <div className="border-main border-2 p-4 flex flex-col gap-4 h-auto">
             <div className="flex justify-between">
                 <div className="flex">
                     {Array(5).fill(<FiStar size={16} fill="#BC69ED" stroke="none"/>).map((items, index) => {

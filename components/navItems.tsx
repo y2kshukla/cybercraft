@@ -33,13 +33,13 @@ const navitems:navItems[] = [
         children: 'Privacy Policy',
         link: '/privacy',
     },
-    {
-        id: 6,
-        children: (<Button link="/contact">
-                    Contact Us
-                </Button>),
-        link: '/',
-    }
+    // {
+    //     id: 6,
+    //     children: (<Button link="/contact">
+    //                 Contact Us
+    //             </Button>),
+    //     link: '/',
+    // }
 ];
 
 export default navitems;

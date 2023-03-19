@@ -7,11 +7,11 @@ import useMediaQuery from "./hooks/useMediaQuery";
 import navitems from "./navItems";
 import { useSnapshot } from "valtio";
 import { MenuState } from "@/utils/state";
+import Button from "./button";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const snap = useSnapshot(MenuState);
-    console.log(snap);
     const matches = useMediaQuery('(max-width: 640px)');
 
     return (
@@ -30,6 +30,11 @@ const Navbar = () => {
                             );
                         })
                     }
+                    <li>
+                    <Button link="/contact">
+                        Contact Us
+                    </Button>
+                    </li>
                 </ul>
             </div>) :
             (<div>

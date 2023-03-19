@@ -5,9 +5,10 @@ import Testimonials from '@/components/testimonials';
 import Head from 'next/head';
 import Image from 'next/image';
 import { motion } from "framer-motion";
-import AliceCarousel from 'react-alice-carousel';
 import { Carousel } from '@mantine/carousel';
-
+import {slide, pop} from '@/utils/animation';
+import { useLottie } from "lottie-react";
+import * as team from '../utils/72259-team.json';
 
 export default function Home() {
   const loadingAnimation = {
@@ -23,8 +24,6 @@ export default function Home() {
       duration: 0.5 
     }
   };
-
-  const handleDragStart = (e: any) => e.preventDefault();
 
   const items = [
     {
@@ -48,6 +47,13 @@ export default function Home() {
       role: 'Senior Business Strategist',
     },
   ]
+
+  const options = {
+    animationData: team,
+    loop: true
+  };
+
+  const { View } = useLottie(options);
 
   return (
     <>
@@ -74,20 +80,21 @@ export default function Home() {
               <Button link='/services'>More details</Button>
             </div>
           </motion.div>
-          <motion.div initial={{ opacity:loadingAnimation.initial.opacity, translateX: 100 }} animate={loadingAnimation.animate} transition={loadingAnimation.transition} className='sm:w-1/2 relative h-60'>
-            <Image src='./home/reshot-illustration-website-design-team-K5VSWPFRC7.svg' alt="Website Team" fill/>
+          <motion.div initial={{ opacity:loadingAnimation.initial.opacity, translateX: 100 }} animate={loadingAnimation.animate} transition={loadingAnimation.transition} className='sm:w-1/2 relative h-contain'>
+            {/* <Image src='./home/reshot-illustration-website-design-team-K5VSWPFRC7.svg' alt="Website Team" fill/> */}
+            { View }
           </motion.div>
         </div>
         {/* about section */}
-        <div className='flex flex-col gap-16'>
-          <motion.div initial={{ opacity:loadingAnimation.initial.opacity, translateX: -100 }} animate={loadingAnimation.animate} transition={loadingAnimation.transition} className='flex gap-8 items-center max-sm:flex-col'>
+        <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.5 }} className='flex flex-col gap-16 overflow-hidden'>
+          <motion.div variants={slide(-100)} className='flex gap-8 items-center max-sm:flex-col'>
             <img className='rounded-2xl sm:w-1/2' src={`./home/team.jpg`}/>
             <div className='flex flex-col gap-4'>
               <Heading><span className='text-main'>Our</span> Team</Heading>
               <p>Our team of experts is passionate about delivering cutting-edge technology and creative solutions to help our clients grow their online presence and achieve their business objectives. From website design and development to digital marketing and branding, we have the skills and expertise to provide our clients with a comprehensive suite of digital services.</p>
             </div>
           </motion.div>
-          <motion.div initial={{ opacity:loadingAnimation.initial.opacity, translateX: 100 }} animate={loadingAnimation.animate} transition={loadingAnimation.transition} className='flex flex-row-reverse gap-8 items-center max-sm:flex-col'>
+          <motion.div variants={slide(100)} className='flex flex-row-reverse gap-8 items-center max-sm:flex-col'>
             <img className='rounded-2xl sm:w-1/2' src={`./home/services.jpg`}/>
             <div className='flex flex-col gap-4'>
               <Heading><span className='text-main'>Our</span> Services</Heading>
@@ -101,19 +108,19 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
         {/* why chose us data */}
-        <div className='flex flex-col gap-16'>
-          <div className='flex justify-center'>
+        <motion.div initial="offscreen" whileInView="onscreen" viewport={{ once: true, amount: 0.8 }} className='flex flex-col gap-16'>
+          <motion.div className='flex justify-center'>
             <Heading><span className='text-main'>Why</span> chose <span className='text-main'>Us</span></Heading>
-          </div>
-          <div className='grid sm:grid-cols-2 gap-8'>
+          </motion.div>
+          <motion.div variants={pop()} className='grid sm:grid-cols-2 gap-8'>
             <ChosingCards heading='Skilled Professionals'>At Cyber Crafts Agency, we understand the importance of staying ahead of the curve in the digital landscape. That&apos;s why we bring a team of highly skilled and experienced professionals to the table, ensuring that your project is in the best hands.</ChosingCards>
             <ChosingCards heading='Latest Technology'>Our experts have a deep understanding of the latest industry trends and will work closely with you to create tailored solutions that meet your unique business needs and goals.</ChosingCards>
             <ChosingCards heading='Expertise and Experience'>From website design and development, to digital marketing, mobile app development, video production and more. We have the expertise and experience to help your business succeed in the digital world.</ChosingCards>
             <ChosingCards heading='Trusted'>Trust us to craft digital solutions that drive success and elevate your business to the next level.</ChosingCards>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         {/* testimonials */}
         <div className='flex flex-col gap-16 items-center'>
           <div className='flex justify-center'>
@@ -121,7 +128,7 @@ export default function Home() {
           </div>
           <div>
             {/* <AliceCarousel autoWidth autoHeight infinite mouseTracking items={items} autoPlay={ true } autoPlayInterval={ 5000 }/> */}
-            <Carousel maw={320} mx="auto" withIndicators height={`auto`}>
+            <Carousel maw={320} loop mx="auto" withIndicators height={`auto`}>
               {items.map((item, index) => {
                 return (<Carousel.Slide key={index}>
                   <Testimonials text={ item.text } writer={ item.writer } role={ item.role }/>
