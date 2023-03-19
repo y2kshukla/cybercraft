@@ -9,6 +9,8 @@ import {
     AccordionItemPanel,
 } from 'react-accessible-accordion';
 import { FiChevronDown } from 'react-icons/fi';
+import Lottie from "lottie-react";
+import * as privacy from '../utils/cloud.json';
 
 export default function Privacy() {
     const accordion = [
@@ -107,8 +109,8 @@ export default function Privacy() {
                         </Heading>
                         <p>When you visit the Website or use Our Services, we may collect personal information from or about you. In particular, We collect information you provide when you: This website collects, by itself or through third parties and Cookies. . We may collect your personal information that you left Us by visiting our website, or subscribing to our services, or attending an event, or any other medium linked to Us (all referred to as, Personal Data). The Personal Data may include, but is not limited to, the following: First name, last name, phone number, company name, profession, address, email address, and website.</p>
                     </div>
-                    <div className='relative h-40 w-full sm:w-1/2'>
-                        <Image src="./privacy/privacy.svg" alt="some text" fill/>
+                    <div className='w-full sm:w-1/2'>
+                        <Lottie animationData={ privacy }/>
                     </div>
                 </div>
                 <div>

@@ -1,8 +1,34 @@
 import Heading from '@/components/heading';
 import Head from 'next/head';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useLottie } from "lottie-react";
+import * as about from '../utils/81450-team.json';
+import * as team from '../utils/16_team_01_solid.json';
+import Lottie from "lottie-react";
 
 export default function About() {
+  const loadingAnimation = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      translateX: 0 
+    },
+    transition: {
+      type: 'linear',
+      duration: 0.5 
+    }
+  };
+
+  const options = {
+    animationData: about,
+    loop: true
+  };
+
+  const { View } = useLottie(options);
+
   return (
     <>
       <Head>
@@ -12,18 +38,21 @@ export default function About() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className='text-background flex flex-col gap-16 mb-16 pt-16'>
-        <Heading className="flex justify-center w-full gap-4">About <span className='text-main'>Us</span></Heading>
-        <div className='flex gap-8 items-center max-sm:flex-col-reverse'>
-          <div className='sm:w-1/2 text-xl flex flex-col gap-4'>
-            <p>
-              Welcome to Cyber Crafts, a digital service agency that specializes in creating stunning digital experiences for discerning individuals and businesses.
-            </p> 
-            <p>
-              At Cyber Crafts, we believe that digital design is the ultimate expression of luxury, elegance, and sophistication. That&apos;s why we work with the finest designers, developers, and digital experts to create bespoke solutions that are as unique as our clients.
-            </p>
-          </div>
-          <div className='sm:w-1/2'>
-            <Image src={`./about/about.svg`} alt='About us' width={500} height={300}/>
+        <div>
+          <Heading className="flex justify-center w-full gap-4">About <span className='text-main'>Us</span></Heading>
+          <div className='flex gap-8 items-center max-sm:flex-col-reverse'>
+            <motion.div initial={{ opacity: loadingAnimation.initial.opacity, translateX: -100 }} animate={ loadingAnimation.animate } transition={loadingAnimation.transition} className='sm:w-1/2 text-xl flex flex-col gap-4'>
+              <p>
+                Welcome to Cyber Crafts, a digital service agency that specializes in creating stunning digital experiences for discerning individuals and businesses.
+              </p> 
+              <p>
+                At Cyber Crafts, we believe that digital design is the ultimate expression of luxury, elegance, and sophistication. That&apos;s why we work with the finest designers, developers, and digital experts to create bespoke solutions that are as unique as our clients.
+              </p>
+            </motion.div>
+            <motion.div initial={{ opacity:loadingAnimation.initial.opacity, translateX: 100 }} animate={loadingAnimation.animate} transition={loadingAnimation.transition} className='sm:w-1/2'>
+              {/* <Image src={`./about/about.svg`} alt='About us' width={500} height={300}/> */}
+              { View }
+            </motion.div>
           </div>
         </div>
         <div className='flex gap-8 flex-row-reverse items-center max-sm:flex-col-reverse'>
@@ -36,7 +65,8 @@ export default function About() {
             </p>
           </div>
           <div className='sm:w-1/2'>
-            <Image src={`./about/abouttwo.svg`} alt='About us' width={500} height={300}/>
+            {/* <Image src={`./about/abouttwo.svg`} alt='About us' width={500} height={300}/> */}
+            <Lottie animationData={ team }/>
           </div>
         </div>
         <div className='text-xl'>
