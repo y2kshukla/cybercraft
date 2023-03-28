@@ -10,7 +10,7 @@ import { MenuState } from "@/utils/state";
 import Button from "./button";
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    // const [isOpen, setIsOpen] = useState(false);
     const snap = useSnapshot(MenuState);
     const matches = useMediaQuery('(max-width: 640px)');
 
@@ -24,7 +24,7 @@ const Navbar = () => {
                     {
                         navitems.map((items) => {
                             return (
-                                <li key={items.id}>
+                                <li key={items.id} className="flex items-center">
                                     <Link className="text-white font-semibold" href={items.link}>{ items.children }</Link>
                                 </li>
                             );

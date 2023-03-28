@@ -3,12 +3,12 @@ import ChosingCards from '@/components/chosingCards';
 import Heading from '@/components/heading';
 import Testimonials from '@/components/testimonials';
 import Head from 'next/head';
-import Image from 'next/image';
 import { motion } from "framer-motion";
 import { Carousel } from '@mantine/carousel';
 import {slide, pop} from '@/utils/animation';
 import { useLottie } from "lottie-react";
 import * as team from '../utils/72259-team.json';
+import TextAnimation from '@/components/TextAnimation';
 
 export default function Home() {
   const loadingAnimation = {
@@ -27,23 +27,38 @@ export default function Home() {
 
   const items = [
     {
-      text: 'I would highly recommend Cyber Crafts Agency to anyone looking for a top-notch digital agency that can help take their business to the next level.',
-      writer: 'Mrs. Van Hartmann',
+      text: 'I was extremely impressed with the level of professionalism and expertise shown by the team. They were able to take my vision and turn it into a beautiful and functional website that exceeded my expectations.',
+      writer: 'Roula M',
       role: 'Legacy Usability Manager',
     },
     {
-      text: 'I was particularly impressed with their ability to deliver results within our budget and timeframe, without compromising on quality.',
-      writer: 'Lana Bernier',
+      text: 'responsive and always available to answer any questions I had throughout the project. Their attention to detail was impressive, and the final product was top-notch.',
+      writer: 'Jake',
       role: 'Senior Paradigm Strategist',
     },
     {
-      text: "I had the pleasure of working with Cyber Crafts Agency on a recent digital marketing campaign for my business, and I couldn't be happier with the results.",
-      writer: 'Mrs. Rose Clington',
+      text: "The team was able to deliver my project on time and within budget. I was very pleased with the final product and have received positive feedback from my customers.",
+      writer: 'George B',
       role: 'Legacy Usability Manager',
     },
     {
-      text: 'Their team of experts was incredibly professional, responsive, and knowledgeable, and they took the time to understand my unique needs and objectives',
-      writer: 'John Doe',
+      text: 'They provided valuable insights and recommendations throughout the project, which helped to improve the overall result.',
+      writer: 'Kate',
+      role: 'Senior Business Strategist',
+    },
+    {
+      text: 'very creative and open to trying new ideas. They were able to bring a fresh perspective to my project and helped me to achieve my goals.',
+      writer: 'T.H',
+      role: 'Senior Business Strategist',
+    },
+    {
+      text: 'very knowledgeable and able to navigate the constantly changing digital landscape with ease. They were able to provide me with a cutting-edge solution that helped my business to stand out.',
+      writer: 'James',
+      role: 'Senior Business Strategist',
+    },
+    {
+      text: 'The team was able to provide a comprehensive service that covered all aspects of my project, from design to development and launch. Their holistic approach was very helpful and made the process much smoother',
+      writer: 'Thomas',
       role: 'Senior Business Strategist',
     },
   ]
@@ -68,7 +83,13 @@ export default function Home() {
         <div className='flex gap-8 sm:content-center	sm:items-center py-24 max-sm:flex-col-reverse max-sm:w-full'>
           <motion.div initial={{ opacity: loadingAnimation.initial.opacity, translateX: -100 }} animate={ loadingAnimation.animate } transition={loadingAnimation.transition} className='sm:w-1/2 flex flex-col gap-4'>
             <Heading>
-              Cyber <span className='text-main'>Crafts</span> Agency
+              <div className='flex gap-2'>
+                <TextAnimation text='Cyber'/> 
+                <span className='text-main'>
+                  <TextAnimation text='Craft'/>
+                </span> 
+                <TextAnimation text="Agency"/>
+              </div>
             </Heading>
             <Heading type='h2'>
               Crafting digital solutions for a connected world!!
